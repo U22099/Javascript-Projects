@@ -1,0 +1,177 @@
+body{
+    margin: 0px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("assets/IMG_0871.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container > .content{
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    width: 300px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    padding: 40px 30px;
+    border: 2px dashed orange;
+    box-shadow: 0px 0px 20px #ffa500;
+}
+/* Output */
+.container > .content > .output-div{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    overflow: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+.container > .content > .output-div h1{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2em;
+}
+.container > .content > .output-div p{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: orange;
+    margin: 0px;
+    width: 100%;
+    height: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.5em;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.6s;
+}
+/* Arranging The Rows */
+.container > .content > .first-row, .container > .content > .second-row, 
+.container > .content > .third-row, .container > .content > .fourth-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+    margin-bottom: 9px;
+}
+.container > .content > .last-row{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    text-align: center;
+}
+/* Styling each column */
+.container > .content > .first-row > .ac button,.container > .content > .first-row > .abs button,
+.container > .content > .first-row > .pct button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #767676;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    transition: 1s;
+}
+.container > .content > .first-row > .div button, .container > .content > .second-row > .mul button,
+.container > .content > .third-row > .min button, .container > .content > .fourth-row > .add button,
+.container > .content > .last-row > .equals button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffb600;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    transition: 1s;
+}
+.container > .content > .second-row > .seven button, .container > .content > .second-row > .eight button,
+.container > .content > .second-row > .nine button, .container > .content > .third-row > .four button,
+.container > .content > .third-row > .five button, .container > .content > .third-row > .six button,
+.container > .content > .fourth-row > .one button, .container > .content > .fourth-row > .two button,
+.container > .content > .fourth-row > .three button, .container > .content > .last-row > .dot button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3b3b3b;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    transition: 1s;
+}
+.container > .content > .last-row > .zero button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3b3b3b;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 40px;
+    width: 140px;
+    height: 70px;
+    transition: 1s;
+    margin-right: 8px;
+}
+/* Styling the button tags */
+.container > .content > .second-row > .seven button, .container > .content > .second-row > .eight button,
+.container > .content > .second-row > .nine button, .container > .content > .third-row > .four button,
+.container > .content > .third-row > .five button, .container > .content > .third-row > .six button,
+.container > .content > .fourth-row > .one button, .container > .content > .fourth-row > .two button,
+.container > .content > .fourth-row > .three button, .container > .content > .last-row > .dot button,
+.container > .content > .first-row > .div button, .container > .content > .second-row > .mul button,
+.container > .content > .third-row > .min button, .container > .content > .fourth-row > .add button,
+.container > .content > .last-row > .equals button,.container > .content > .first-row > .ac button,
+.container > .content > .first-row > .abs button, .container > .content > .first-row > .pct button,
+.container > .content > .last-row > .zero button{
+    font-size: 2em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+/* Animation */
+.container > .content > .first-row > .ac button:hover,.container > .content > .first-row > .abs button:hover,
+.container > .content > .first-row > .pct button:hover{
+    background-color: #b9b9b9;
+    cursor: pointer;
+}
+.container > .content > .first-row > .div button:hover, .container > .content > .second-row > .mul button:hover,
+.container > .content > .third-row > .min button:hover, .container > .content > .fourth-row > .add button:hover,
+.container > .content > .last-row > .equals button:hover{
+    background-color: white;
+    color: orange;
+    cursor: pointer;
+}
+.container > .content > .second-row > .seven button:hover, .container > .content > .second-row > .eight button:hover,
+.container > .content > .second-row > .nine button:hover, .container > .content > .third-row > .four button:hover,
+.container > .content > .third-row > .five button:hover, .container > .content > .third-row > .six button:hover,
+.container > .content > .fourth-row > .one button:hover, .container > .content > .fourth-row > .two button:hover,
+.container > .content > .fourth-row > .three button:hover, .container > .content > .last-row > .dot button:hover {
+    background-color: #767676;
+    cursor: pointer;
+}
+.container > .content > .last-row > .zero button:hover{
+    background-color: #767676;
+    cursor: pointer;
+}
+@media (max-width: 615px){
+    .container > .content{
+        padding: 30px 10px;
+    }
+}

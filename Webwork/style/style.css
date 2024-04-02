@@ -1,0 +1,131 @@
+body{
+    margin: 0px;
+    font-family: 'Courier New', Courier, monospace;   
+}
+h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 100vh;
+}
+.container > .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.container > .content img{
+    position: fixed;
+    size: cover;
+    width: 100%;
+    height: 100%;
+    animation: fadein 1s;
+    transition: 1s;
+}
+.container > .content > .div{
+    position: absolute;
+    left: auto;
+    right: auto;
+    width: 400px;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+}
+.container > .content > .div > .copybtn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.container > .content > .div > .copybtn button{
+    height: 40px;
+    width: 100px;
+    font-weight: 800;
+    background-color: blue;
+    color: black;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(10% , 10%,80%, 70%);
+}
+.container > .content > .div > .copybtn button:hover{
+    cursor: pointer;
+}
+.container > .content > .div > .copybtn button:active{
+    box-shadow: none;
+}
+.container > .content > .toast{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    visibility: hidden;
+    left: auto;
+    top: 90%;
+    height: 40px;
+    width: 120px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    transition: 0.5s;
+}
+@-webkit-keyframes fadein{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes fadein{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadeout{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes fadeout{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@media (max-width: 615px){
+    .container > .content > .div{
+        width: 280px;
+        padding: 30px 10px;
+    }
+    .container > .content > .div > .copybtn button{
+        width: 100px;
+        margin-left: 5px;
+    }
+}

@@ -1,0 +1,111 @@
+body{
+    margin: 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: black;
+    border-radius: 20px;
+    padding: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: purple;
+    border-radius: 20px;
+    width: 8px;
+    opacity: 0.4;
+    transition: 0.5s;
+}
+::-webkit-scrollbar-thumb:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-image: url("../images/IMG_0971.JPG");
+    background-position: center;
+}
+.container > .content{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 70%;
+}
+.container > .content header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid purple;
+    width: 100%;
+    height: 80px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.container > .content section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    margin: 50px 0px;
+}
+.container > .content > .body > .game{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    background-color: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid purple;
+    margin: 20px 0px;
+    padding: 20px;
+    border-radius: 20px;
+    transition: 1s;
+}
+.container > .content > .body > .game:hover{
+    cursor: pointer;
+    transform: scale(1.06);
+}
+.container > .content > .body > .game > .img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+.container > .content > .body > .game > .img img{
+    border-radius: 10px;
+}
+.container > .content > .body > .game > .body p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    font-size: 1.5em;
+}
+.container > .content > .body > .game > .body a{
+    color: white; 
+    font-size: 1.7em;   
+}
+@media (max-width: 615px){
+    .container > .content{
+        width: 100%;
+    }
+    .container > .content section{
+        grid-template-columns: 1fr;
+    }
+    .container > .content > .body > .game{
+        padding: 10px;
+    }
+    .container > .content > .body > .game > .img img{
+        border-radius: 10px;
+        width: 100px;
+    }
+    .container > .content > .body > .game > .body p{
+       width: 150px;
+    }
+}

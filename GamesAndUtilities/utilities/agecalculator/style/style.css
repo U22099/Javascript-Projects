@@ -1,0 +1,77 @@
+body{
+    margin: 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("../../../images/IMG_0971.JPG");
+    background-position: center;
+    background-size: auto;
+}
+.container > .content{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: max-content;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid purple;
+    border-radius: 20px;
+}
+.container > .content input{
+    padding: 10px;
+    width: 300px;
+    height: 40px;
+    background-color: none;
+    color-scheme: dark;
+    background: none;
+    backdrop-filter: blur(10px);
+    font-size: 2em;
+    color: white;
+    border-radius: 8px;
+    border: 2px solid purple;
+    transition: 0.5s;
+}
+.container > .content input:hover{
+    cursor: pointer;
+}
+.container > .content input:active,.container > .content input:focus{
+    outline: none;
+    border: 2px solid black;
+}
+.container > .content button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px 0px 0px;
+    width: 130px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    border: 2px solid purple;
+    transition: 0.5s;
+}
+.container > .content button:hover{
+    cursor: pointer;
+}
+.container > .content button:active{
+    border: 2px solid white;
+}
+.container > .content h1:last-child{
+    font-size: 1.3em;
+    margin: 10px 0px;
+}
+@media (max-width:615px){
+    .container > .content{
+        width: 98%;
+        padding: 10px;
+    }
+    .container > .content input{
+     width: 280px;
+    }
+}

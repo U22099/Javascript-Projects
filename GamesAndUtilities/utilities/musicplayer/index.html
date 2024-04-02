@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script/main.js"></script>
+    <script src="https://kit.fontawesome.com/ce134ae05f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <nav class="nav">
+                <i class="fa-solid fa-arrow-left"></i>
+                <i class="fa-solid fa-bars"></i>
+            </nav>
+            <div class="img">
+                <img src="../../images/IMG_0971.JPG" alt="">
+            </div>
+            <h1 id="title">Unity</h1>
+            <p id="artist">Alan Walker Ft Walkers</p>
+            <audio id="music">
+                <source src="music/mus1.mp3" type="audio/mpeg">
+            </audio>
+            <input type="range" value="0" id="slider">
+            <div class="controls">
+                <i class="fa-solid fa-backward" onclick="previous()" id="nxtIcon"></i>
+                <i class="fa-solid fa-play" onclick="playPause()" id="ctrlIcon"></i>
+                <i class="fa-solid fa-forward" onclick="next()" id="prvIcon"></i>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

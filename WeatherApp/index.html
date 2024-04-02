@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script/main.js"></script>
+    <script src="https://kit.fontawesome.com/ce134ae05f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <header class="header">
+                <h1>Get Today's Weather</h1>
+                <div class="input">
+                    <input type="text" id="input" placeholder="Enter City" spellcheck="false">
+                    <button onclick="checkWeather()"><img src="images/search.jpg" width="40" height="40" alt=""></button>
+                </div>
+                <div class="error">
+                    <p>Invalid City Name</p>
+                </div>
+            </header>
+            <main class="main">
+                <img id="img" src="images/sun.jpg"  width="200" height="200" alt="">
+                <h1 id="tempot">34C</h1>
+                <p id="desot">Sunny</p>
+                <p id="cityot">Lagos</p>
+                <div class="footer">
+                    <div class="humidity">
+                        <i class="fa-solid fa-droplet"></i>
+                        <div class="txt">
+                            <p id="humot">53%</p>
+                            <p>Humidity</p>
+                        </div>
+                    </div>
+                    <div class="windspeed">
+                        <i class="fa-solid fa-wind"></i>
+                        <div class="txt">
+                            <p id="windot">5.66 km/h</p>
+                            <p>Wind Speed</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

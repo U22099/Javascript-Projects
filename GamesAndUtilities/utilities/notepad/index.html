@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notepad</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script/main.js"></script>
+    <script src="https://kit.fontawesome.com/ce134ae05f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="dialog-container">
+                <div class="dialog" id="pswsetdialog">
+                    <h1>Set New Password:</h1>
+                    <input autofocus type="password" name="pass" id="pswset">
+                    <input autofocus type="password" name="pass" id="pswreminder" placeholder="Type in a password reminder">
+                    <button onclick="setPsw()">Set Password</button>
+                </div>
+                <div class="dialog" id="pswdialog">
+                    <h1>Enter Password:</h1>
+                    <input autofocus type="password" name="pass" id="pswent">
+                    <button onclick="chkPsw()">Enter</button>
+                </div>
+                <div class="dialog" id="resetdialog">
+                    <h1>Password Reset:</h1>
+                    <input autofocus type="password" name="pass" id="pswrem" placeholder="Input your reminder">
+                    <input autofocus type="password" name="pass" id="pswnew" placeholder="Input new Password">
+                    <button onclick="pswReset()">Reset Password</button>
+                </div>
+            </div>            
+            <header class="header">
+                <div class="head">
+                    <h1>Notepad</h1>
+                </div>
+                <div class="btn">
+                    <button onclick="showNotepad()"><i class="fa-solid fa-notes-medical"></i>Create Notes</button>
+                </div>
+            </header>
+            <main class="main">
+                <section class="sec1">
+                    <div class="box"><i id="des1" class="fa-solid fa-x" onclick="box1Remove()"></i>
+                        <textarea name="txt1" id="txt1" cols="40" rows="15" placeholder="Enter your text"></textarea>
+                    </div>
+                    <div class="box"><i id="des2" class="fa-solid fa-x" onclick="box2Remove()"></i>
+                        <textarea name="txt2" id="txt2" cols="40" rows="15" placeholder="Enter your text"></textarea>
+                    </div>
+                    <div class="box"><i id="des3" class="fa-solid fa-x" onclick="box3Remove()"></i>
+                        <textarea name="txt3" id="txt3" cols="40" rows="15" placeholder="Enter your text"></textarea>
+                    </div>
+                </section>
+                <section class="sec2">
+                    <div class="box"><i id="des4" class="fa-solid fa-x" onclick="box4Remove()"></i>
+                        <textarea name="txt4" id="txt4" cols="40" rows="15" placeholder="Enter your text"></textarea>
+                    </div>
+                    <div class="box"><i id="des5" class="fa-solid fa-x" onclick="box5Remove()"></i>
+                        <textarea name="txt5" id="txt5" cols="40" rows="15" placeholder="Enter your text"></textarea>
+                    </div>
+                    <div class="box"><i id="des6" class="fa-solid fa-x" onclick="box6Remove()"></i>
+                        <textarea name="txt6" id="txt6" cols="40" rows="15" placeholder="Enter your text"></textarea>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

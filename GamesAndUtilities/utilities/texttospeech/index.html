@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text To Speech</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script/main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <header class="header">
+                <div class="time">
+                    <h1 class="hrs">00</h1>
+                    <h1 class="sepa">:</h1>
+                    <h1 class="min">00</h1>
+                    <h1 class="sepa">:</h1>
+                    <h1 class="sec">00</h1>
+                </div>
+            </header>
+            <section class="section">
+                <div class="head">
+                    <h1>Text To </h1>
+                    <h1 class="sp">Speech</h1>
+                    <h1>Converter</h1>
+                </div>
+                <textarea name="txt" id="txt" placeholder = "Write anything here" cols="40" rows="15"></textarea>
+                <div class="voice">
+                    <select name="selvoice" id="voice">
+                        
+                    </select>
+                    <button onclick="play()">Play</button>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

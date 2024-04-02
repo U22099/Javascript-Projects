@@ -1,0 +1,191 @@
+body{
+    margin: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: black;
+    border-radius: 20px;
+    padding: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: purple;
+    border-radius: 20px;
+    width: 8px;
+    opacity: 0.4;
+    transition: 0.5s;
+}
+::-webkit-scrollbar-thumb:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
+    background-image: url(../../../images/IMG_0972.JPG);
+    background-position: center;
+    background-size: cover;
+}
+.container > .content{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    text-align: center;
+    width: 60%;
+    height: 100%;
+    margin: 10px;
+}
+.container > .content header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding: 0px 50px;
+}
+.container > .content > .header > .time{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 2px solid purple;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.container > .content > .header > .time > .sepa{
+    margin: 0px 30px 0px 0px;
+}
+.container > .content > .header > .time > .hrs:after{
+    content: "HOUR";
+    font-size: 16px;
+    position: relative;
+    left: -40px;
+    bottom: -20px;
+    transform: translateX(-50%);  
+}
+.container > .content > .header > .time > .min:after{
+    content: "MIN";
+    font-size: 16px;
+    position: relative;
+    left: -40px;
+    bottom: -20px;
+    transform: translateX(-50%);  
+}
+.container > .content > .header > .time > .sec:after{
+    content: "SEC";  
+    font-size: 16px;
+    position: relative;
+    left: -40px;
+    bottom: -20px;
+    transform: translateX(-50%);
+}
+.container > .content > .section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container > .content > .section > .head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+.container > .content > .section > .head > .sp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: purple;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin: 0px 5px;
+}
+.container > .content > .section textarea{
+    resize: none;
+    background-color: transparent;
+    color: white;
+    font-size: 2em;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid purple;
+    outline: none;
+    margin: 0px 0px 10px 0px;
+}
+.container > .content > .section > .voice{
+    display: flex;
+    align-items: center;
+}
+.container > .content > .section > .voice #voice{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: purple;
+    font-weight: 700;
+    font-size: 1.5em;
+    border-radius: 20px;
+    padding: 15px;
+    width: 350px;
+    border: 2px solid purple;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin: 0px 40px 60px 0px;
+}
+.container > .content > .section > .voice #voice:focus{
+    outline: none;
+    border: 2px solid purple;
+}
+.container > .content > .section > .voice button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: purple;
+    border-radius: 20px;
+    padding: 20px 40px;
+    outline: none;
+    border: none;
+    margin: 0px 0px 60px 30px;
+}
+.container > .content > .section > .voice #voice:hover, .container > .content > .section > .voice button:hover{
+    cursor: pointer;
+}
+@media (max-width: 615px){
+    .container > .content{
+        margin: 0px;
+        width: 100%;
+    }
+    .container > .content header{
+        margin: 10px 0px 0px 0px;
+        justify-content: center;
+        padding: 0px;
+    }
+    .container > .content > .header > .time > .sepa{
+        margin: 0px;
+        justify-content: center;
+    }
+    .container > .content > .section > .head{
+        font-size: 1.5em;
+        flex-direction: column;
+    }
+    .container > .content > .section textarea{
+        width: 280px;
+        height: 300px;
+    }
+    .container > .content > .section > .voice{
+        flex-direction: column;
+    }
+    .container > .content > .section > .voice #voice{
+        margin: 0px 0px 30px 0px;
+        font-size: 1em;
+        width: 260px;
+    }
+    container > .content > .section > .voice button{
+        margin: 20px 0px 60px 0px;
+    }
+}

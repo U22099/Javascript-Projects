@@ -1,0 +1,277 @@
+body{
+    margin: 0px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: black;
+    border-radius: 20px;
+    padding: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: purple;
+    border-radius: 20px;
+    width: 8px;
+    opacity: 0.4;
+    transition: 0.5s;
+}
+::-webkit-scrollbar-thumb:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-image: url("../../../images/IMG_0972.JPG");
+    background-position: center;
+    /* background-size: cover; */
+}
+.container > .content{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    text-align: center;
+    width: 80%;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 50px;
+    border: 8px solid purple;
+    padding: 40px;
+    margin: 40px 0px;
+}
+.container > .content header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.container > .content > .header  > .head{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+.container > .content > .header  > .head h1{
+    margin: 10px 0px 10px 10px;
+    font-size: 2.5em;
+    color: purple;
+}
+.container > .content > .header  > .btn{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+.container > .content > .header  > .btn button{
+    background-color: none;
+    background: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 3px solid purple;
+    font-size: 1.2em;
+    width: 200px;
+    height: 60px;
+    border-radius: 20px;
+    color: white;
+    outline: none;
+}
+.container > .content > .header  > .btn button:hover{
+    cursor: pointer;
+}
+.container > .content > .header  > .btn button:active{
+    background-color: purple;
+    border: none;
+}
+.container > .content > .header  > .btn i{
+    margin: 0px 10px 0px 0px;
+    font-size: 1.5em;
+}
+.container > .content > .main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 50px;
+    border: 8px solid purple;
+    padding: 20px;
+}
+.container > .content > .main > .sec1 > .box textarea{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.5em;
+    background: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 4px solid purple;
+    padding: 20px; 
+    resize: none; 
+    margin: 0px 0px 10px 0px;  
+    visibility: hidden;
+}
+.container > .content > .main > .sec1 > .box textarea:focus{
+    outline: none;
+}
+.container > .content > .main > .sec1 > .box i{
+    background-color: purple;
+    font-size: 1.4em;
+    border-radius: 50%;
+    position: relative;
+    left: 180px;
+    bottom: -40px;
+    padding: 8px;
+    z-index: 1; 
+    visibility: hidden;
+}
+.container > .content > .main > .sec1 > .box i:hover{
+    cursor: pointer;
+}
+.container > .content > .main > .sec2 > .box textarea{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.5em;
+    background: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 4px solid purple;
+    padding: 20px; 
+    resize: none; 
+    margin: 0px 0px 10px 0px;  
+    visibility: hidden;
+}
+.container > .content > .main > .sec2 >.box textarea:focus{
+    outline: none;
+}
+.container > .content > .main > .sec2 > .box i{
+    background-color: purple;
+    font-size: 1.4em;
+    border-radius: 50%;
+    position: relative;
+    left: 180px;
+    bottom: -50px;
+    padding: 8px;
+    z-index: 1; 
+    visibility: hidden;
+}
+.container > .content > .main > .sec2 > .box i:hover{
+    cursor: pointer;
+}
+.container > .content >.dialog-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    background-color: black;
+    border: 4px solid purple;
+    border-radius: 40px;
+    visibility: hidden;
+    z-index: 1;
+}
+.container > .content >.dialog-container > .dialog{
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    background: none;
+    color: white;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 50px;
+    border: 8px solid purple;
+    padding: 40px;
+    position: absolute;
+    bottom: 70% ;
+    width: max-content;
+    height: max-content;
+    z-index: 2;
+    visibility: hidden;
+}
+.container > .content >.dialog-container > .dialog h1{
+    margin: 10px 0px;
+}
+.container > .content >.dialog-container > .dialog input{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.5em;
+    background: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 4px solid purple;
+    padding: 5px 10px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+.container > .content >.dialog-container > .dialog input:focus{
+    outline: none;
+}
+.container > .content >.dialog-container > .dialog button{
+    background-color: purple;
+    color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 1.3em;
+    height: 40px;
+}
+.container > .content >.dialog-container > .dialog button:active{
+    border: none;
+}
+.container > .content >.dialog-container > .dialog button:hover{
+    cursor: pointer;
+}
+@media (max-width: 615px){
+    .container > .content >.dialog-container > .dialog{
+        padding: 8px;
+        border-radius: 20px;
+        bottom: 50%;
+    }
+    .container > .content >.dialog-container > .dialog input{
+        width: 200px;
+    }
+    .container > .content >.dialog-container > .dialog button{
+        width: 180px;
+        height: max-content;
+        padding: 8px 10px;
+    }
+    .container > .content{
+        width: 80%;
+        padding: 20px;
+    }
+    .container > .content > .main{
+        grid-template-columns: 1fr;
+        padding: 0px;
+        width: 100%;
+        border: none;
+        border-radius: none;
+        height: auto;
+    }
+    .container > .content > .main > .sec1 > .box textarea{
+        width: 220px;
+        height: 200px;
+    }
+    .container > .content > .main > .sec2 > .box textarea{
+        width: 220px;
+        height: 200px;
+    }
+    .container > .content > .main > .sec1 > .box i{
+        left: 90px;
+        bottom: -40px;
+    }
+    .container > .content > .main > .sec2 > .box i{
+        left: 90px;
+        bottom: -40px;
+    }
+}

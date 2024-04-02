@@ -1,0 +1,101 @@
+body{
+    margin: 0px;
+    font-family: 'Courier New', Courier, monospace;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: black;
+    border-radius: 20px;
+    padding: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: blue;
+    border-radius: 20px;
+    width: 8px;
+    opacity: 0.4;
+    transition: 0.5s;
+}
+::-webkit-scrollbar-thumb:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-image: url("../images/IMG_0940.JPG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.container > .content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: blue;
+    font-weight: 700;
+    font-size: 2em;
+    border-radius: 20px;
+    padding: 40px 60px;
+    width: 70%;
+    box-shadow: -10px 10px 5px rgba(0, 0, 0, 0.3);
+    margin: 40px 0px;
+}
+.container > .content > .header{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    font-size: 1.2em;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 30px;
+}
+.container > .content > .header img{
+    border-radius: 20px;
+    width: 400px; 
+    height: 350px;
+}
+.container > .content > .header h1{
+    margin: 0px;
+}
+.container > .content > .body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    width: 100%;
+}
+.container > .content > .body a{
+    color: black;
+}
+@media (max-width: 615px){
+    .container > .content{
+        padding: 40px;
+    }
+    .container > .content > .header img{
+        width: 200px; 
+        height: 200px;
+    }
+    .container > .content > .body {
+        text-align: center;
+    }
+    .container > .content > .body h1{
+        font-size: 1.2em;
+    }
+    .container > .content > .body #psl{
+        font-size: 0.9em;
+    }
+    .container > .content > .body h2{
+        font-size: 0.8em;
+    }
+    .container > .content > .body ul{
+        font-size: 0.8em;
+        text-align: left;
+    }
+}

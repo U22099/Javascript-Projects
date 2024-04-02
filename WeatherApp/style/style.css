@@ -1,0 +1,153 @@
+body{
+    margin: 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(to bottom, blue, green);
+    border-radius: 20px;
+    width: 8px;
+    opacity: 0.4;
+    transition: 0.5s;
+}
+::-webkit-scrollbar-thumb:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, black,red,blue);
+}
+.container > .content{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    text-align: center;
+    width: max-content;
+    background: linear-gradient(to bottom right, blue, green);
+    border-radius: 30px;
+    padding: 40px;
+    margin: 40px 0px;
+}
+.container > .content header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container > .content > .header h1{
+    margin: 5px 0px;
+}
+.container > .content > .header > .input{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.container > .content > .header > .input input{
+    display: flex;
+    align-items: center;
+    color: black;
+    font-size: 1.5em;
+    background-color: white;
+    border-radius: 20px;
+    border: none;
+    padding: 5px 10px;
+    height: 40px;
+}
+.container > .content > .header > .input input:focus{
+    outline: none;
+}
+.container > .content > .header > .input button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+    border-radius: 50%;
+    font-size: 1.3em;
+    height: 70px;
+    width: 70px;
+}
+.container > .content > .header > .input button:active{
+    border: none;
+}
+.container > .content > .header > .input button:hover{
+    cursor: pointer;
+}
+.container > .content > .header > .error{
+    text-align: left;
+    width: 100%;
+    display: none;
+}
+.container > .content > .main{
+    display: none;
+}
+.container > .content > .main img{
+    border-radius: 50%;
+}
+.container > .content > .main h1{
+    font-size: 5em;
+    margin: 0px;
+}
+.container > .content > .main p{
+    font-size: 3em;
+    margin: 0px ;
+}
+.container > .content > .main >.footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+}
+.container > .content > .main >.footer > .humidity i{
+    font-size: 3em;
+    margin: 0px 5px 0px 0px;
+}
+.container > .content > .main >.footer > .windspeed i{
+    font-size: 3em;
+    margin: 0px 5px 0px 0px;
+}
+.container > .content > .main >.footer > .humidity{
+    display: flex;
+    align-items: center;
+}
+.container > .content > .main >.footer > .humidity > .txt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container > .content > .main >.footer > .windspeed{
+    display: flex;
+    align-items: center;
+}
+.container > .content > .main >.footer > .windspeed > .txt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container > .content > .main >.footer > .humidity > .txt p{
+    font-size:  1.4em;
+    margin: 0px;
+}
+.container > .content > .main >.footer > .windspeed > .txt p{
+    font-size: 1.4em;
+    margin: 0px;
+}
+@media (max-width: 615px){
+    .container > .content{
+        padding: 13px;
+    }
+    .container > .content > .header > .input input{
+        width: 180px;
+    }
+}

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notepad</title>
+    <style>
+        body{
+            margin: 0px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: white;
+        }
+        ::-webkit-scrollbar{
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track{
+            background-color: black;
+            border-radius: 20px;
+            padding: 5px;
+        }
+        ::-webkit-scrollbar-thumb{
+            background-color: purple;
+            border-radius: 20px;
+            width: 8px;
+            opacity: 0.4;
+            transition: 0.5s;
+        }
+        ::-webkit-scrollbar-thumb:hover{
+            cursor: pointer;
+            opacity: 1;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background-color: black;
+            background-position: center;
+            /* background-size: cover; */
+        }
+        .container > .content{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 20px;
+            text-align: center;
+            width: 80%;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 50px;
+            border: 8px solid purple;
+            padding: 40px;
+            margin: 40px 0px;
+        }
+        .container > .content header{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .container > .content > .header  > .head{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+        }
+        .container > .content > .header  > .head h1{
+            margin: 10px 0px 10px 10px;
+            font-size: 2.5em;
+            color: purple;
+        }
+        .container > .content > .header  > .btn{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+        }
+        .container > .content > .header  > .btn button{
+            background-color: none;
+            background: none;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 3px solid purple;
+            font-size: 1.2em;
+            width: 200px;
+            height: 60px;
+            border-radius: 20px;
+            color: white;
+            outline: none;
+        }
+        .container > .content > .header  > .btn button:hover{
+            cursor: pointer;
+        }
+        .container > .content > .header  > .btn button:active{
+            background-color: purple;
+            border: none;
+        }
+        .container > .content > .header  > .btn i{
+            margin: 0px 10px 0px 0px;
+            font-size: 1.5em;
+        }
+        .container > .content > .main{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 50px;
+            border: 8px solid purple;
+            padding: 20px;
+        }
+        .container > .content > .main > .sec1 > .box textarea{
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1.5em;
+            background: none;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 4px solid purple;
+            padding: 20px; 
+            resize: none; 
+            margin: 0px 0px 10px 0px;  
+            visibility: hidden;
+        }
+        .container > .content > .main > .sec1 > .box textarea:focus{
+            outline: none;
+        }
+        .container > .content > .main > .sec1 > .box i{
+            background-color: purple;
+            font-size: 1.4em;
+            border-radius: 50%;
+            position: relative;
+            left: 180px;
+            bottom: -40px;
+            padding: 8px;
+            z-index: 1; 
+            visibility: hidden;
+        }
+        .container > .content > .main > .sec1 > .box i:hover{
+            cursor: pointer;
+        }
+        .container > .content > .main > .sec2 > .box textarea{
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1.5em;
+            background: none;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 4px solid purple;
+            padding: 20px; 
+            resize: none; 
+            margin: 0px 0px 10px 0px;  
+            visibility: hidden;
+        }
+        .container > .content > .main > .sec2 >.box textarea:focus{
+            outline: none;
+        }
+        .container > .content > .main > .sec2 > .box i{
+            background-color: purple;
+            font-size: 1.4em;
+            border-radius: 50%;
+            position: relative;
+            left: 180px;
+            bottom: -50px;
+            padding: 8px;
+            z-index: 1; 
+            visibility: hidden;
+        }
+        .container > .content > .main > .sec2 > .box i:hover{
+            cursor: pointer;
+        }
+        .container > .content >.dialog-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            background-color: black;
+            border: 4px solid purple;
+            border-radius: 40px;
+            visibility: hidden;
+            z-index: 1;
+        }
+        .container > .content >.dialog-container > .dialog{
+            display: grid;
+            grid-template-columns: 1fr;
+            text-align: center;
+            background: none;
+            color: white;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 50px;
+            border: 8px solid purple;
+            padding: 40px;
+            position: absolute;
+            bottom: 70% ;
+            width: max-content;
+            height: max-content;
+            z-index: 2;
+            visibility: hidden;
+        }
+        .container > .content >.dialog-container > .dialog h1{
+            margin: 10px 0px;
+        }
+        .container > .content >.dialog-container > .dialog input{
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1.5em;
+            background: none;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 4px solid purple;
+            padding: 5px 10px;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+        .container > .content >.dialog-container > .dialog input:focus{
+            outline: none;
+        }
+        .container > .content >.dialog-container > .dialog button{
+            background-color: purple;
+            color: white;
+            border: 2px solid black;
+            border-radius: 10px;
+            font-size: 1.3em;
+            height: 40px;
+        }
+        .container > .content >.dialog-container > .dialog button:active{
+            border: none;
+        }
+        .container > .content >.dialog-container > .dialog button:hover{
+            cursor: pointer;
+        }
+        @media (max-width: 615px){
+            .container > .content >.dialog-container > .dialog{
+                padding: 8px;
+                border-radius: 20px;
+                bottom: 50%;
+            }
+            .container > .content >.dialog-container > .dialog input{
+                width: 200px;
+            }
+            .container > .content >.dialog-container > .dialog button{
+                width: 180px;
+                height: max-content;
+                padding: 8px 10px;
+            }
+            .container > .content{
+                width: 80%;
+                padding: 20px;
+            }
+            .container > .content > .main{
+                grid-template-columns: 1fr;
+                padding: 0px;
+                width: 100%;
+                border: none;
+                border-radius: none;
+                height: auto;
+            }
+            .container > .content > .main > .sec1 > .box textarea{
+                width: 220px;
+                height: 200px;
+            }
+            .container > .content > .main > .sec2 > .box textarea{
+                width: 220px;
+                height: 200px;
+            }
+            .container > .content > .main > .sec1 > .box i{
+                left: 90px;
+                bottom: -40px;
+            }
+            .container > .content > .main > .sec2 > .box i{
+                left: 90px;
+                bottom: -40px;
+            }
+        }
+    </style>
+    <script>
+        let textbox1;
+        let textbox2;
+        let textbox3;
+        let textbox4;
+        let textbox5;
+        let textbox6;
+        let destroy1;
+        let destroy2;
+        let destroy3;
+        let destroy4;
+        let destroy5;
+        let destroy6;
+        let no = 0;
+        let int1;
+        let int2;
+        let int3;
+        let int4;
+        let int5;
+        let int6;
+        let input1 = "key1";
+        let input2 = "key2";
+        let input3 = "key3";
+        let input4 = "key4";
+        let input5 = "key5";
+        let input6 = "key6";
+        let state1 = "state1";
+        let state2 = "state2";
+        let state3 = "state3";
+        let state4 = "state4";
+        let state5 = "state5";
+        let state6 = "state6";
+        let dialogContainer;
+        let dialog;
+        let dialog2;
+        let dialog3;
+        let pswset;
+        let pswent;
+        let password;
+        window.onload = ()=>{
+            
+            textbox1 = document.querySelector("#txt1");
+            textbox2 = document.querySelector("#txt2");
+            textbox3 = document.querySelector("#txt3");
+            textbox4 = document.querySelector("#txt4");
+            textbox5 = document.querySelector("#txt5");
+            textbox6 = document.querySelector("#txt6");
+            destroy1 = document.querySelector("#des1");
+            destroy2 = document.querySelector("#des2");
+            destroy3 = document.querySelector("#des3");
+            destroy4 = document.querySelector("#des4");
+            destroy5 = document.querySelector("#des5");
+            destroy6 = document.querySelector("#des6");
+            body = document.getElementsByTagName("BODY")[0];
+            dialogContainer = document.querySelector(".dialog-container");
+            dialog = document.querySelector("#pswsetdialog");
+            dialog2 = document.querySelector("#pswdialog");
+            dialog3 = document.querySelector("#resetdialog");
+            pswset = document.querySelector("#pswset");
+            pswreminder = document.querySelector("#pswreminder");
+            pswent = document.querySelector("#pswent");
+            pswrem = document.querySelector("#pswrem");
+            pswnew = document.querySelector("#pswnew");
+            password = localStorage.getItem("psw");
+            if(password){
+                showDialog(dialog2);
+            }
+            else{
+                showDialog(dialog);
+            }
+        }
+        function chkPsw(){
+            if(pswent.value == localStorage.getItem("psw")){
+                textbox1.style.visibility = localStorage.getItem(state1);
+                textbox2.style.visibility = localStorage.getItem(state2);
+                textbox3.style.visibility = localStorage.getItem(state3);
+                textbox4.style.visibility = localStorage.getItem(state4);
+                textbox5.style.visibility = localStorage.getItem(state5);
+                textbox6.style.visibility = localStorage.getItem(state6);
+                destroy1.style.visibility = localStorage.getItem(state1);
+                destroy2.style.visibility = localStorage.getItem(state2);
+                destroy3.style.visibility = localStorage.getItem(state3);
+                destroy4.style.visibility = localStorage.getItem(state4);
+                destroy5.style.visibility = localStorage.getItem(state5);
+                destroy6.style.visibility = localStorage.getItem(state6);
+                textbox1.value = localStorage.getItem(input1);
+                textbox2.value = localStorage.getItem(input2);
+                textbox3.value = localStorage.getItem(input3);
+                textbox4.value = localStorage.getItem(input4);
+                textbox5.value = localStorage.getItem(input5);
+                textbox6.value = localStorage.getItem(input6);
+                closeDialog(dialog2);
+            }
+            else if(pswent.value =="$PASSWORDRESET$"){
+                closeDialog(dialog2);
+                showDialog(dialog3);
+            }
+            else{
+                pswent.value = "";
+                alert("Wrong Password, If you have forgotten your password type in \"$PASSWORDRESET$\" to reset your password.");
+            }
+        }
+        function setPsw(){
+            localStorage.setItem("psw", pswset.value);
+            localStorage.setItem("pswreminder", pswreminder.value);
+            closeDialog(dialog);
+            alert("Your password is: "+pswset.value+" And your password reminder is: "+pswreminder.value);
+        }
+        function pswReset(){
+            if(localStorage.getItem("pswreminder") == pswrem.value){
+                localStorage.setItem("psw", pswnew.value);
+                textbox1.style.visibility = localStorage.getItem(state1);
+                textbox2.style.visibility = localStorage.getItem(state2);
+                textbox3.style.visibility = localStorage.getItem(state3);
+                textbox4.style.visibility = localStorage.getItem(state4);
+                textbox5.style.visibility = localStorage.getItem(state5);
+                textbox6.style.visibility = localStorage.getItem(state6);
+                destroy1.style.visibility = localStorage.getItem(state1);
+                destroy2.style.visibility = localStorage.getItem(state2);
+                destroy3.style.visibility = localStorage.getItem(state3);
+                destroy4.style.visibility = localStorage.getItem(state4);
+                destroy5.style.visibility = localStorage.getItem(state5);
+                destroy6.style.visibility = localStorage.getItem(state6);
+                textbox1.value = localStorage.getItem(input1);
+                textbox2.value = localStorage.getItem(input2);
+                textbox3.value = localStorage.getItem(input3);
+                textbox4.value = localStorage.getItem(input4);
+                textbox5.value = localStorage.getItem(input5);
+                textbox6.value = localStorage.getItem(input6);
+                closeDialog(dialog3);
+                alert("New password is: "+pswnew.value);
+            }
+            else{
+                alert("Wrong Input!");
+            }
+        }
+        function showDialog(x){
+            dialogContainer.style.visibility = "visible";
+            x.style.visibility = "visible";
+            body.style.height = "100%";
+            body.style.overflow = "hidden";
+        }
+        function closeDialog(x){
+            dialogContainer.style.visibility = "hidden";
+            x.style.visibility = "hidden";
+            body.style.height = "auto%";
+            body.style.overflow = "auto";
+        }
+        function showNotepad(){
+            let string;
+            if(no == 6){
+                alert("Max Notepads Reached")
+                no = 0;
+            }
+            no += 1;
+            if(no == 1){
+                if(textbox1.style.visibility == "visible"){
+                    no += 1;
+                }
+                else{
+                    box1();
+                }
+            }
+            if(no == 2){
+                if(textbox2.style.visibility == "visible"){
+                    no += 1;
+                }
+                else{
+                    box2();
+                }
+            }
+            if(no == 3){
+                if(textbox3.style.visibility == "visible"){
+                    no += 1;
+                }
+                else{
+                    box3();
+                }
+            }
+            if(no == 4){
+                if(textbox4.style.visibility == "visible"){
+                    no += 1;
+                }
+                else{
+                    box4();
+                }
+            }
+            if(no == 5){
+                if(textbox5.style.visibility == "visible"){
+                    no += 1;
+                }
+                else{
+                    box5();
+                }
+            }
+            if(no == 6){
+                if(textbox6.style.visibility == "visible"){
+                    no += 1;
+                }
+                else{
+                    box6();
+                }
+            }
+        }
+        function box1(){
+            destroy1.style.visibility = "visible";
+            string = localStorage.getItem(input1);
+            textbox1.style.visibility = "visible";
+            textbox1.value = string;
+            textbox1.focus()
+            int1 = setInterval(()=>{
+                localStorage.setItem(input1, textbox1.value);
+            }, 500);
+            localStorage.setItem(state1, "visible");
+        }
+        function box2(){
+            destroy2.style.visibility = "visible";
+            string = localStorage.getItem(input2);
+            textbox2.style.visibility = "visible";
+            textbox2.value = string;
+            textbox2.focus()
+            int2 = setInterval(()=>{
+                localStorage.setItem(input2, textbox2.value);
+            }, 500);
+            localStorage.setItem(state2, "visible");
+        }
+        function box3(){
+            destroy3.style.visibility = "visible";
+            string = localStorage.getItem(input3);
+            textbox3.style.visibility = "visible";
+            textbox3.value = string;
+            textbox3.focus()
+            int3 = setInterval(()=>{
+                localStorage.setItem(input3, textbox3.value);
+            }, 500);
+            localStorage.setItem(state3, "visible");
+        }
+        function box4(){
+            destroy4.style.visibility = "visible";
+            string = localStorage.getItem(input4);
+            textbox4.style.visibility = "visible";
+            textbox4.value = string;
+            textbox4.focus()
+            int4 = setInterval(()=>{
+                localStorage.setItem(input4, textbox4.value);
+            }, 500);
+            localStorage.setItem(state4, "visible");
+        }
+        function box5(){
+            destroy5.style.visibility = "visible";
+            string = localStorage.getItem(input5);
+            textbox5.style.visibility = "visible";
+            textbox5.value = string;
+            textbox5.focus()
+            int5 = setInterval(()=>{
+                localStorage.setItem(input5, textbox5.value);
+            }, 500);
+            localStorage.setItem(state5, "visible");
+        }
+        function box6(){
+            destroy6.style.visibility = "visible";
+            string = localStorage.getItem(input6);
+            textbox6.style.visibility = "visible";
+            textbox6.value = string;
+            textbox6.focus()
+            int6 = setInterval(()=>{
+                localStorage.setItem(input6, textbox6.value);
+            }, 500);
+            localStorage.setItem(state6, "visible");
+        }
+        function box1Remove(){
+            textbox1.style.visibility = "hidden";
+            destroy1.style.visibility = "hidden";
+            clearInterval(int1);
+            localStorage.removeItem(input1);
+            localStorage.removeItem(state1);
+            no = 0;
+        }
+        function box2Remove(){
+            textbox2.style.visibility = "hidden";
+            destroy2.style.visibility = "hidden";
+            clearInterval(int2);
+            localStorage.removeItem(input2);
+            localStorage.removeItem(state2);
+            no = 0;
+        }
+        function box3Remove(){
+            textbox3.style.visibility = "hidden";
+            destroy3.style.visibility = "hidden";
+            clearInterval(int3);
+            localStorage.removeItem(input3);
+            localStorage.removeItem(state3);
+            no = 0;
+        }
+        function box4Remove(){
+            textbox4.style.visibility = "hidden";
+            destroy4.style.visibility = "hidden";
+            clearInterval(int4);
+            localStorage.removeItem(input4);
+            localStorage.removeItem(state4);
+            no = 0;
+        }
+        function box5Remove(){
+            textbox5.style.visibility = "hidden";
+            destroy5.style.visibility = "hidden";
+            clearInterval(int5);
+            localStorage.removeItem(input5);
+            localStorage.removeItem(state5);
+            no = 0;
+        }
+        function box6Remove(){
+            textbox6.style.visibility = "hidden";
+            destroy6.style.visibility = "hidden";
+            clearInterval(int6);
+            localStorage.removeItem(input6);
+            localStorage.removeItem(state6);
+            no = 0;
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/ce134ae05f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="dialog-container">
+                <div class="dialog" id="pswsetdialog">
+                    <h1>Set New Password:</h1>
+                    <input autofocus type="password" name="pass" id="pswset">
+                    <input autofocus type="password" name="pass" id="pswreminder" placeholder="Type in a password reminder">
+                    <button onclick="setPsw()">Set Password</button>
+                </div>
+                <div class="dialog" id="pswdialog">
+                    <h1>Enter Password:</h1>
+                    <input autofocus type="password" name="pass" id="pswent">
+                    <button onclick="chkPsw()">Enter</button>
+                </div>
+                <div class="dialog" id="resetdialog">
+                    <h1>Password Reset:</h1>
+                    <input autofocus type="password" name="pass" id="pswrem" placeholder="Input your reminder">
+                    <input autofocus type="password" name="pass" id="pswnew" placeholder="Input new Password">
+                    <button onclick="pswReset()">Reset Password</button>
+                </div>
+            </div>            
+            <header class="header">
+                <div class="head">
+                    <h1>Notepad</h1>
+                </div>
+                <div class="btn">
+                    <button onclick="showNotepad()"><i class="fa-solid fa-notes-medical"></i>Create Notes</button>
+                </div>
+            </header>
+            <main class="main">
+                <section class="sec1">
+                    <div class="box"><i id="des1" class="fa-solid fa-x" onclick="box1Remove()"></i>
+                        <textarea name="txt1" id="txt1" cols="40" rows="15" placeholder="Enter your text"></textarea>
+                    </div>
+                    <div class="box"><i id="des2" class="fa-solid fa-x" onclick="box2Remove()"></i>
+                        <textarea name="txt2" id="txt2" cols="40" rows="15" placeholder="Enter your text"></textarea>
+                    </div>
+                    <div class="box"><i id="des3" class="fa-solid fa-x" onclick="box3Remove()"></i>
+                        <textarea name="txt3" id="txt3" cols="40" rows="15" placeholder="Enter your text"></textarea>
+                    </div>
+                </section>
+                <section class="sec2">
+                    <div class="box"><i id="des4" class="fa-solid fa-x" onclick="box4Remove()"></i>
+                        <textarea name="txt4" id="txt4" cols="40" rows="15" placeholder="Enter your text"></textarea>
+                    </div>
+                    <div class="box"><i id="des5" class="fa-solid fa-x" onclick="box5Remove()"></i>
+                        <textarea name="txt5" id="txt5" cols="40" rows="15" placeholder="Enter your text"></textarea>
+                    </div>
+                    <div class="box"><i id="des6" class="fa-solid fa-x" onclick="box6Remove()"></i>
+                        <textarea name="txt6" id="txt6" cols="40" rows="15" placeholder="Enter your text"></textarea>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <iframe src="https://appsgeyser.com/social_widget/social_widget.php? width=295&height=150&apkName=Notepad_17973820&simpleVersion=no" width="320" height="180" vspace="0" hspace="0" frameborder="no" scrolling="no" seamless="" allowtransparency="true"></iframe>
+</body>
+</html>
