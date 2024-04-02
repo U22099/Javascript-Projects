@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Generator</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="stylesheet"
+      href="/node_modules/sweetalert2/dist/sweetalert2.css"
+    />
+  </head>
+  <body>
+    <section class="container">
+      <div class="content">
+        <div class="input_wripper">
+          <input
+            type="text"
+            class="input"
+            id="userInput"
+            placeholder="Enter your desired food"
+          />
+          <button id="generateBtn">Get Recipe</button>
+        </div>
+
+        <div class="output-container">
+          <div class="head">
+            <div class="">
+              <img
+                src="images/IMG_0929.JPG"
+                alt="img"
+                width="300px"
+                height="200px"
+                class="recipe_img"
+                id="recipeImage"
+              />
+              <p id="recipeName"></p>
+              <p id="recipeCategory"></p>
+              <a href="" id="anchorLink" target="_blank"></a>
+            </div>
+            <div class="ingredents_wripper">
+              <h1 class="header">Ingredients</h1>
+              <ol>
+                <li id="ingredientOne"></li>
+                <li id="ingredientTwo"></li>
+                <li id="ingredientThree"></li>
+                <li id="ingredientFour"></li>
+                <li id="ingredientFive"></li>
+                <li id="ingredientSix"></li>
+                <li id="ingredientSeven"></li>
+                <li id="ingredientEight"></li>
+                <li id="ingredientNine"></li>
+                <li id="ingredientTen"></li>
+              </ol>
+            </div>
+          </div>
+          <p class="recipe_text" id="recipeDescription">
+          </p>
+        </div>
+      </div>
+    </section>
+    <script src="script/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
+    <!-- <script src="/node_modules/axios/dist/axios.min.js"></script> -->
+  </body>
+</html>

@@ -1,0 +1,226 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-track {
+  background: black;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb {
+  background: none;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: white;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 40px 0px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../images/IMG_0929.JPG");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content {
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  width: 75%;
+}
+
+/* Styling The Input Wripper */
+.input_wripper {
+  display: flex;
+  align-items: center;
+  width: 85%;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: -10px 20px 10px rgba(255, 255, 255, 0.2);
+  margin-bottom: 30px;
+}
+
+.input {
+  width: 75%;
+  height: 8vh;
+  border: 2px solid transparent;
+  outline: 2px solid transparent;
+  background-color: white;
+  padding-left: 20px;
+  border-radius: 10px;
+  font-size: 1.5em;
+}
+
+input:focus {
+  outline: 4px solid #243073;
+}
+
+#generateBtn {
+  background-color: #fff;
+  color: #000;
+  font-size: 1.3rem;
+  padding: 10px 30px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  margin-left: 20px;
+  transition: 0.5s ease-in;
+}
+
+#generateBtn:hover {
+  background: #000;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+#anchorLink {
+  font-size: 1.4rem;
+  color: blue;
+  padding-top: 1.3rem;
+  display: inline-block;
+  text-decoration: none;
+}
+
+#anchorLink:focus {
+  color: purple;
+}
+
+/* Styling The Output Container */
+.output-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 85%;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: -10px 20px 10px rgba(255, 255, 255, 0.2);
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  width: 90%;
+}
+
+.recipe_img {
+  border-radius: 10px;
+  padding-bottom: 1.2rem;
+}
+
+.ingredents_wripper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.ingredents_wripper h1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  margin: 5px 0px;
+}
+
+.ingredents_wripper ol {
+  text-align: left;
+  width: 90%;
+  margin: 5px 0px;
+  font-size: 1.3em;
+  height: 150px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.ingredents_wripper ol::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 20px;
+}
+
+.ingredents_wripper ol::-webkit-scrollbar-track {
+  background: black;
+  border-radius: 20px;
+}
+
+.ingredents_wripper ol::-webkit-scrollbar-thumb {
+  background: none;
+  border-radius: 20px;
+}
+
+.ingredents_wripper ol::-webkit-scrollbar-thumb:hover {
+  background: white;
+}
+
+.recipe_text {
+  padding-top: 3rem;
+}
+
+.output-container p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.6em;
+}
+
+@media (max-width: 615px) {
+  .output-container {
+    width: 98%;
+    margin-top: 10px;
+  }
+  .content {
+    width: 95%;
+  }
+  .input_wripper {
+    width: 98%;
+  }
+  .input {
+    width: 85%;
+  }
+
+  #generateBtn {
+    padding: 4px 10px;
+    font-size: 1.1rem;
+  }
+  .recipe_text {
+    padding-top: 2.5rem;
+  }
+  .head {
+    flex-direction: column;
+  }
+  .head img {
+    width: 250px;
+    height: 180px;
+  }
+  .output-container p {
+    text-align: left;
+  }
+
+  .recipeName,
+  .recipeCategory {
+    text-align: center;
+  }
+}
