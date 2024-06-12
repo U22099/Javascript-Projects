@@ -21,7 +21,7 @@ function calculate(){
     if(currentDate.getMonth()>=birthdate.getMonth()){
         y += 1;
     }
-    output.innerHTML = "You are "+(y-1)+" Years "+m+" Months and "+d+" Days Old.";
+    output.innerHTML = "You are "+(y-1)+" Years "+(m-1)+" Months and "+d+" Days Old.";
     let speech = new SpeechSynthesisUtterance;
     let voices = window.speechSynthesis.getVoices();
     speech.voice = voices[5];
