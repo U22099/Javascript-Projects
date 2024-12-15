@@ -13,15 +13,16 @@ function calculate(){
     let d = currentDate.getDate() - birthdate.getDate();
     if(m < 0){
         m += 12;
+        y -= 1;
     }
     if(d < 0){
         let mlim = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate();
         d += mlim;
     }
-    if(currentDate.getMonth()>=birthdate.getMonth()){
+    if(m > 0){
         y += 1;
     }
-    output.innerHTML = "You are "+(y-1)+" Years "+(m-1)+" Months and "+d+" Days Old.";
+    output.innerHTML = "You are "+(y-1)+" Years "+(m)+" Months and "+d+" Days Old.";
     let speech = new SpeechSynthesisUtterance;
     let voices = window.speechSynthesis.getVoices();
     speech.voice = voices[5];
