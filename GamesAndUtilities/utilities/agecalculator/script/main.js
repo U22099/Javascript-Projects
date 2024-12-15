@@ -11,13 +11,19 @@ function calculate(){
     let y = currentDate.getFullYear() - birthdate.getFullYear();
     let m = currentDate.getMonth() - birthdate.getMonth();
     let d = currentDate.getDate() - birthdate.getDate();
+    let cmlim = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate();
+    //let bmlim = new Date(birthdate.getFullYear(), birthdate.getMonth(), 0).getDate();
+    let dy = currentDate.getDate() + birthday.getDate();
     if(m < 0 || (m === 0 && d < 0)){
         m += m === 0 ? 11 : 12;
         y -= 1;
     }
     if(d < 0){
-        let mlim = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate();
-        d += mlim;
+        d += cmlim;
+    }
+    if(dy < 30){
+        d = dy;
+        m -= 1;
     }
     output.innerHTML = "You are "+(y)+" Years "+(m)+" Months and "+d+" Days Old.";
     let speech = new SpeechSynthesisUtterance;
