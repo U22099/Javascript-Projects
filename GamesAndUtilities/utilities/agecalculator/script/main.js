@@ -13,7 +13,7 @@ function calculate(){
     let d = currentDate.getDate() - birthdate.getDate();
     let cmlim = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate();
     //let bmlim = new Date(birthdate.getFullYear(), birthdate.getMonth(), 0).getDate();
-    let dy = currentDate.getDate() + birthday.getDate();
+    let dy = currentDate.getDate() + birthdate.getDate();
     if(m < 0 || (m === 0 && d < 0)){
         m += m === 0 ? 11 : 12;
         y -= 1;
